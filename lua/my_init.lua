@@ -898,6 +898,17 @@ require('lazy').setup({
           { name = 'path' },
           { name = 'nvim_lsp_signature_help' },
         },
+        window = {
+          completion = {
+            -- border = { '┏', '━', '┛', '┃', '┛', '━', '┓', '┃' },
+            winhighlight = 'Normal:Normal,FloatBorder:Normal,CursorLine:PmenuSel,Search:PmenuSel',
+            col_offset = -3,
+            side_padding = 0,
+          },
+          documentation = {
+            border = { '┏', '━', '┛', '┃', '┛', '━', '┓', '┃' },
+          },
+        },
       }
       vim.api.nvim_set_hl(0, 'Pmenu', { bg = '#1F1F28', fg = '#A9B1D6' })
       vim.api.nvim_set_hl(0, 'PmenuSel', { bg = '#3A4A58', fg = '#89B4FA' })
@@ -1046,4 +1057,3 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-require 'my_init'
