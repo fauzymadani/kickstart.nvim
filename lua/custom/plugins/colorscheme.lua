@@ -30,12 +30,6 @@ return {
         },
       }
       vim.cmd.colorscheme 'kanagawa-dragon'
-      vim.cmd [[
-  hi Pmenu guibg=#0F0F0F guifg=#D3C6AA
-  hi PmenuSel guibg=#89B4FA guifg=#0F0F0F
-  hi PmenuSbar guibg=#0F0F0F
-  hi PmenuThumb guibg=#89B4FA
-]]
     end,
   },
 }

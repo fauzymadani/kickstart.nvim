@@ -47,13 +47,13 @@ return {
 
           -- Menampilkan mode Neovim (Normal, Insert, Visual, dll.)
           local mode_color = {
-            n = '#89B4FA',
+            n = '#1c1c1c',
             i = '#7AA2F7',
             v = '#F7768E',
             V = '#F7768E',
             c = '#E6B450',
-            s = '#C0CAF5',
-            S = '#C0CAF5',
+            s = '#ffffff',
+            S = '#ffffff',
             R = '#F78C6C',
           }
 
@@ -66,7 +66,7 @@ return {
           return {
             { mode_display },
             { '┊ ' },
-            { get_diagnostic_label() },
+            -- { get_diagnostic_label() },
             { get_git_diff() },
             { (ft_icon or '') .. ' ', guifg = ft_color, guibg = 'none' },
             { filename .. ' ', gui = vim.bo[props.buf].modified and 'bold,italic' or 'bold' },
