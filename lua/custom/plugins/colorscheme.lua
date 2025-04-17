@@ -1,6 +1,5 @@
 return {
   {
-    -- colorscheme
     'scottmckendry/cyberdream.nvim',
     lazy = true,
     priority = 1000,
@@ -13,23 +12,18 @@ return {
     'kvrohit/substrata.nvim',
   },
   {
-    'rebelot/kanagawa.nvim',
+    'neg-serg/neg.nvim',
+  },
+  {
+    'kdheepak/monochrome.nvim',
+  },
+  {
+    'wnkz/monoglow.nvim',
+    lazy = false,
+    priority = 1500, -- Pastikan ini lebih tinggi dari tema lain
     config = function()
-      require('kanagawa').setup {
-        compile = false,
-        undercurl = true,
-        commentStyle = { italic = true },
-        keywordStyle = { italic = false },
-        statementStyle = { bold = false },
-        typeStyle = {},
-        transparent = false,
-        dimInactive = true,
-        theme = 'dragon',
-        colors = {
-          theme = { all = { ui = { bg = '#0F0F0F' } } },
-        },
-      }
-      vim.cmd.colorscheme 'kanagawa-dragon'
+      require('monoglow').setup()
+      vim.cmd.colorscheme 'monoglow-lack' -- Pastikan ini dipanggil terakhir
     end,
   },
 }

@@ -938,7 +938,6 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'kanagawa'
     end,
   },
 
@@ -966,9 +965,9 @@ require('lazy').setup({
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
-      -- local statusline = require 'mini.statusline'
+      local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      -- statusline.setup { use_icons = vim.g.have_nerd_font }
+      statusline.setup { use_icons = vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
@@ -1058,3 +1057,14 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+parser_config.latex = {
+  install_info = {
+    url = '~/projects/tree-sitter-latex', -- Path ke repositori parser LaTeX yang kamu clone
+    files = { 'src/parser.c', 'src/scanner.c' }, -- File parser yang digunakan, sesuaikan jika perlu
+    branch = 'master', -- Branch yang digunakan, biasanya defaultnya 'main'
+    generate_requires_npm = false, -- Tidak perlu npm jika stand-alone
+    requires_generate_from_grammar = false, -- Tidak perlu jika sudah ada file parser.c yang digenerate
+  },
+  filetype = 'tex', -- Menyatakan bahwa filetype 'tex' akan menggunakan parser ini
+}
