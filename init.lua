@@ -965,9 +965,9 @@ require('lazy').setup({
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
-      local statusline = require 'mini.statusline'
+      -- local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      -- statusline.setup { use_icons = vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
@@ -1068,3 +1068,8 @@ parser_config.latex = {
   },
   filetype = 'tex', -- Menyatakan bahwa filetype 'tex' akan menggunakan parser ini
 }
+vim.cmd.colorscheme 'noir'
+vim.api.nvim_set_hl(0, 'Normal', { bg = '#0E0E0E', fg = '#C2C2C2' })
+vim.api.nvim_set_hl(0, 'NormalNC', { bg = '#0E0E0E' })
+vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#1A1A1A' })
+vim.api.nvim_set_hl(0, 'Visual', { bg = '#2A2A2A' })
